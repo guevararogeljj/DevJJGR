@@ -12,11 +12,13 @@ namespace DevJJGR.Application.Products.Queries.GetAll
         private readonly ILogger<GetAllProductsHandler> _logger;
         private readonly IProductsRepository _productsRepository;
         private readonly IMapper _mapper;
-        public GetAllProductsHandler(ILogger<GetAllProductsHandler> logger, IProductsRepository productsRepository, IMapper mapper)
+        private readonly IRabbitMQService _rabbitMQService;
+        public GetAllProductsHandler(ILogger<GetAllProductsHandler> logger, IProductsRepository productsRepository, IMapper mapper, IRabbitMQService rabbitMQService)
         {
             this._logger = logger;
             this._productsRepository = productsRepository;
             this._mapper = mapper;
+            this._rabbitMQService = rabbitMQService;
         }
 
         public async Task<ResponseDto<List<ProductsDTO>>> Handle(GetAllProductsCommand request, CancellationToken cancellationToken)
@@ -35,6 +37,7 @@ namespace DevJJGR.Application.Products.Queries.GetAll
                 responseDto.Data = products;
                 responseDto.SetStatusCode(StatusCode.OK);
                 responseDto.Message = "Transacción exitosa";
+                this._rabbitMQService.SendMessage("se hizo una consulta de todos los registros");
                 return responseDto;
             }
             catch (Exception ex)

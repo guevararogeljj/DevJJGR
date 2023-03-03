@@ -967,6 +967,23 @@
           }
         }
       },
+      "RabbitMQ.Client/6.4.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Memory": "4.5.4",
+          "System.Threading.Channels": "4.7.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/RabbitMQ.Client.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/RabbitMQ.Client.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Scrutor/4.2.0": {
         "type": "package",
         "dependencies": {
@@ -1652,6 +1669,19 @@
           "buildTransitive/net6.0/System.Text.Json.targets": {}
         }
       },
+      "System.Threading.Channels/4.7.1": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/System.Threading.Channels.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/System.Threading.Channels.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Threading.Tasks/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1736,7 +1766,8 @@
         "dependencies": {
           "DevJJGR.Application": "1.0.0",
           "DevJJGR.Persistence": "1.0.0",
-          "Quartz": "3.4.0"
+          "Quartz": "3.4.0",
+          "RabbitMQ.Client": "6.4.0"
         },
         "compile": {
           "bin/placeholder/DevJJGR.Infrastructure.dll": {}
@@ -3132,6 +3163,22 @@
         "quartz-logo-small.png",
         "quartz.extensions.hosting.3.4.0.nupkg.sha512",
         "quartz.extensions.hosting.nuspec"
+      ]
+    },
+    "RabbitMQ.Client/6.4.0": {
+      "sha512": "1znR1gGU+xYVSpO5z8nQolcUKA/yydnxQn7Ug9+RUXxTSLMm/eE58VKGwahPBjELXvDnX0k/kBrAitFLRjx9LA==",
+      "type": "package",
+      "path": "rabbitmq.client/6.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/net461/RabbitMQ.Client.dll",
+        "lib/net461/RabbitMQ.Client.xml",
+        "lib/netstandard2.0/RabbitMQ.Client.dll",
+        "lib/netstandard2.0/RabbitMQ.Client.xml",
+        "rabbitmq.client.6.4.0.nupkg.sha512",
+        "rabbitmq.client.nuspec"
       ]
     },
     "Scrutor/4.2.0": {
@@ -4661,6 +4708,30 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "System.Threading.Channels/4.7.1": {
+      "sha512": "6akRtHK/wab3246t4p5v3HQrtQk8LboOt5T4dtpNgsp3zvDeM4/Gx8V12t0h+c/W9/enUrilk8n6EQqdQorZAA==",
+      "type": "package",
+      "path": "system.threading.channels/4.7.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Threading.Channels.dll",
+        "lib/net461/System.Threading.Channels.xml",
+        "lib/netcoreapp3.0/System.Threading.Channels.dll",
+        "lib/netcoreapp3.0/System.Threading.Channels.xml",
+        "lib/netstandard1.3/System.Threading.Channels.dll",
+        "lib/netstandard1.3/System.Threading.Channels.xml",
+        "lib/netstandard2.0/System.Threading.Channels.dll",
+        "lib/netstandard2.0/System.Threading.Channels.xml",
+        "system.threading.channels.4.7.1.nupkg.sha512",
+        "system.threading.channels.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Threading.Tasks/4.3.0": {
       "sha512": "LbSxKEdOUhVe8BezB/9uOGGppt+nZf6e1VFyw6v3DN6lqitm0OSn2uXMOdtP0M3W4iMcqcivm2J6UgqiwwnXiA==",
       "type": "package",
@@ -4827,49 +4898,38 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\b8hx58\\.nuget\\packages\\": {},
-    "C:\\Program Files\\DevExpress 22.1\\Components\\Offline Packages": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/Users/jeronimoguevararogel/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\b8hx58\\source\\repos\\DevJJGR\\src\\DevJJGR.App\\DevJJGR.Presentation.csproj",
+      "projectUniqueName": "/Users/jeronimoguevararogel/Projects/DevJJGR/src/DevJJGR.App/DevJJGR.Presentation.csproj",
       "projectName": "DevJJGR.Presentation",
-      "projectPath": "C:\\Users\\b8hx58\\source\\repos\\DevJJGR\\src\\DevJJGR.App\\DevJJGR.Presentation.csproj",
-      "packagesPath": "C:\\Users\\b8hx58\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\b8hx58\\source\\repos\\DevJJGR\\src\\DevJJGR.App\\obj\\",
+      "projectPath": "/Users/jeronimoguevararogel/Projects/DevJJGR/src/DevJJGR.App/DevJJGR.Presentation.csproj",
+      "packagesPath": "/Users/jeronimoguevararogel/.nuget/packages/",
+      "outputPath": "/Users/jeronimoguevararogel/Projects/DevJJGR/src/DevJJGR.App/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\DevExpress 22.1\\Components\\Offline Packages",
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\b8hx58\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.1.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/jeronimoguevararogel/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\DevExpress 22.1\\Components\\System\\Components\\Packages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\b8hx58\\source\\repos\\DevJJGR\\src\\DevJJGR.Application\\DevJJGR.Application.csproj": {
-              "projectPath": "C:\\Users\\b8hx58\\source\\repos\\DevJJGR\\src\\DevJJGR.Application\\DevJJGR.Application.csproj"
+            "/Users/jeronimoguevararogel/Projects/DevJJGR/src/DevJJGR.Application/DevJJGR.Application.csproj": {
+              "projectPath": "/Users/jeronimoguevararogel/Projects/DevJJGR/src/DevJJGR.Application/DevJJGR.Application.csproj"
             },
-            "C:\\Users\\b8hx58\\source\\repos\\DevJJGR\\src\\DevJJGR.Infrastructure\\DevJJGR.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\b8hx58\\source\\repos\\DevJJGR\\src\\DevJJGR.Infrastructure\\DevJJGR.Infrastructure.csproj"
+            "/Users/jeronimoguevararogel/Projects/DevJJGR/src/DevJJGR.Infrastructure/DevJJGR.Infrastructure.csproj": {
+              "projectPath": "/Users/jeronimoguevararogel/Projects/DevJJGR/src/DevJJGR.Infrastructure/DevJJGR.Infrastructure.csproj"
             },
-            "C:\\Users\\b8hx58\\source\\repos\\DevJJGR\\src\\DevJJGR.Persistence\\DevJJGR.Persistence.csproj": {
-              "projectPath": "C:\\Users\\b8hx58\\source\\repos\\DevJJGR\\src\\DevJJGR.Persistence\\DevJJGR.Persistence.csproj"
+            "/Users/jeronimoguevararogel/Projects/DevJJGR/src/DevJJGR.Persistence/DevJJGR.Persistence.csproj": {
+              "projectPath": "/Users/jeronimoguevararogel/Projects/DevJJGR/src/DevJJGR.Persistence/DevJJGR.Persistence.csproj"
             }
           }
         }
@@ -4946,7 +5006,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.200/RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "ivu/ZqZP+pUegmUHDehZhRMdLypCkfUtRmgzA952CfwDaIlj6F256gZU3KbptzjlRNH+FXmVxmAGNiLdVZNU5g==",
+  "dgSpecHash": "fR3ViOXx7CxaUefch8oamBEvFcm4Ixn9PVyMkkdqjbLgUmSKXVh0C4WdD2riq/1C4ZG+u4cFPLbVs3im5JKFAw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\b8hx58\\source\\repos\\DevJJGR\\src\\DevJJGR.Domain\\DevJJGR.Domain.csproj",
+  "projectFilePath": "/Users/jeronimoguevararogel/Projects/DevJJGR/src/DevJJGR.Domain/DevJJGR.Domain.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\b8hx58\\.nuget\\packages\\fluentvalidation\\11.2.1\\fluentvalidation.11.2.1.nupkg.sha512",
-    "C:\\Users\\b8hx58\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512"
+    "/Users/jeronimoguevararogel/.nuget/packages/fluentvalidation/11.2.1/fluentvalidation.11.2.1.nupkg.sha512",
+    "/Users/jeronimoguevararogel/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512"
   ],
   "logs": []
 }

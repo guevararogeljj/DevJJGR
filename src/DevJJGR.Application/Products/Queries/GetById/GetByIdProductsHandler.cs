@@ -12,11 +12,14 @@ namespace DevJJGR.Application.Products.Queries.GetById
         private readonly IProductsRepository _productsRepository;
         private readonly IMapper _mapper;
         private readonly ILogger<GetByIdProductsCommand> _logger;
-        public GetByIdProductsHandler(IProductsRepository productsRepository, IMapper mapper, ILogger<GetByIdProductsCommand> logger)
+        private readonly IRabbitMQService _rabbitMQService;
+        public GetByIdProductsHandler(IProductsRepository productsRepository, IMapper mapper,
+            ILogger<GetByIdProductsCommand> logger, IRabbitMQService rabbitMQService)
         {
             this._productsRepository = productsRepository;
             this._mapper = mapper;
             this._logger = logger;
+            this._rabbitMQService = rabbitMQService;
         }
 
         public async Task<ResponseDto<ProductsDTO>> Handle(GetByIdProductsCommand request, CancellationToken cancellationToken)
@@ -35,6 +38,7 @@ namespace DevJJGR.Application.Products.Queries.GetById
                 responseDto.Data = productRespose;
                 responseDto.SetStatusCode(StatusCode.OK);
                 responseDto.Message = "Transacción exitosa";
+                this._rabbitMQService.SendMessage($"se hizo una consulta por el producto { product.ProductName}");
                 return responseDto;
             }
             catch (Exception ex)

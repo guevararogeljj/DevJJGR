@@ -1,0 +1,5 @@
+﻿<Properties StartupConfiguration="{8B67ACF5-0FCF-408D-AB12-C1A5D032BA60}|DevJJGR.App">
+  <MonoDevelop.Ide.ItemProperties.src.DevJJGR.Presentation PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.src.RabbitMQListener PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

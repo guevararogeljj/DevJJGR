@@ -74,35 +74,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\b8hx58\\.nuget\\packages\\": {},
-    "C:\\Program Files\\DevExpress 22.1\\Components\\Offline Packages": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/Users/jeronimoguevararogel/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\b8hx58\\source\\repos\\DevJJGR\\src\\DevJJGR.Domain\\DevJJGR.Domain.csproj",
+      "projectUniqueName": "/Users/jeronimoguevararogel/Projects/DevJJGR/src/DevJJGR.Domain/DevJJGR.Domain.csproj",
       "projectName": "DevJJGR.Domain",
-      "projectPath": "C:\\Users\\b8hx58\\source\\repos\\DevJJGR\\src\\DevJJGR.Domain\\DevJJGR.Domain.csproj",
-      "packagesPath": "C:\\Users\\b8hx58\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\b8hx58\\source\\repos\\DevJJGR\\src\\DevJJGR.Domain\\obj\\",
+      "projectPath": "/Users/jeronimoguevararogel/Projects/DevJJGR/src/DevJJGR.Domain/DevJJGR.Domain.csproj",
+      "packagesPath": "/Users/jeronimoguevararogel/.nuget/packages/",
+      "outputPath": "/Users/jeronimoguevararogel/Projects/DevJJGR/src/DevJJGR.Domain/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\DevExpress 22.1\\Components\\Offline Packages",
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\b8hx58\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.1.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/jeronimoguevararogel/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\DevExpress 22.1\\Components\\System\\Components\\Packages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -146,7 +135,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.200/RuntimeIdentifierGraph.json"
       }
     }
   }

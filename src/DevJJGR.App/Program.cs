@@ -1,4 +1,5 @@
 using DevJJGR.Application.Behaviors;
+using DevJJGR.Infrastructure;
 using DevJJGR.Persistence;
 using FluentValidation;
 using MediatR;
@@ -17,6 +18,7 @@ WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 //            .AddClasses(false)
 //            .AsImplementedInterfaces()
 //            .WithScopedLifetime());
+builder.Services.AddServices();
 builder.Services.AddPersistenceServices(builder.Configuration);
 builder.Services.AddMediatR(DevJJGR.Application.AssemblyReference.Assembly);
 
