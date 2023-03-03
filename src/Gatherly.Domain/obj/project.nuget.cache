@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "1WKBA1XbnQb9SIC68uNani+qwQTGZeVrfq52eikSrM7dNBCkoUtXlqLUVbb4aL7nehaqBkFYmJ36upe/6jmt3w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\b8hx58\\source\\repos\\DevJJGR\\src\\Gatherly.Domain\\DevJJGR.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\b8hx58\\.nuget\\packages\\fluentvalidation\\11.2.1\\fluentvalidation.11.2.1.nupkg.sha512",
+    "C:\\Users\\b8hx58\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

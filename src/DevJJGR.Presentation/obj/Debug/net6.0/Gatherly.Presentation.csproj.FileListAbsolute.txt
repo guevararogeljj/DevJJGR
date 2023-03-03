@@ -1,0 +1,17 @@
+C:\Users\b8hx58\source\repos\DevJJGR\src\Gatherly.Presentation\bin\Debug\net6.0\Gatherly.Presentation.deps.json
+C:\Users\b8hx58\source\repos\DevJJGR\src\Gatherly.Presentation\bin\Debug\net6.0\Gatherly.Presentation.dll
+C:\Users\b8hx58\source\repos\DevJJGR\src\Gatherly.Presentation\bin\Debug\net6.0\Gatherly.Presentation.pdb
+C:\Users\b8hx58\source\repos\DevJJGR\src\Gatherly.Presentation\bin\Debug\net6.0\Gatherly.Application.dll
+C:\Users\b8hx58\source\repos\DevJJGR\src\Gatherly.Presentation\bin\Debug\net6.0\Gatherly.Domain.dll
+C:\Users\b8hx58\source\repos\DevJJGR\src\Gatherly.Presentation\bin\Debug\net6.0\Gatherly.Application.pdb
+C:\Users\b8hx58\source\repos\DevJJGR\src\Gatherly.Presentation\bin\Debug\net6.0\Gatherly.Domain.pdb
+C:\Users\b8hx58\source\repos\DevJJGR\src\Gatherly.Presentation\obj\Debug\net6.0\Gatherly.Presentation.csproj.AssemblyReference.cache
+C:\Users\b8hx58\source\repos\DevJJGR\src\Gatherly.Presentation\obj\Debug\net6.0\Gatherly.Presentation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\b8hx58\source\repos\DevJJGR\src\Gatherly.Presentation\obj\Debug\net6.0\Gatherly.Presentation.AssemblyInfoInputs.cache
+C:\Users\b8hx58\source\repos\DevJJGR\src\Gatherly.Presentation\obj\Debug\net6.0\Gatherly.Presentation.AssemblyInfo.cs
+C:\Users\b8hx58\source\repos\DevJJGR\src\Gatherly.Presentation\obj\Debug\net6.0\Gatherly.Presentation.csproj.CoreCompileInputs.cache
+C:\Users\b8hx58\source\repos\DevJJGR\src\Gatherly.Presentation\obj\Debug\net6.0\Gatherly.Presentation.csproj.CopyComplete
+C:\Users\b8hx58\source\repos\DevJJGR\src\Gatherly.Presentation\obj\Debug\net6.0\Gatherly.Presentation.dll
+C:\Users\b8hx58\source\repos\DevJJGR\src\Gatherly.Presentation\obj\Debug\net6.0\refint\Gatherly.Presentation.dll
+C:\Users\b8hx58\source\repos\DevJJGR\src\Gatherly.Presentation\obj\Debug\net6.0\Gatherly.Presentation.pdb
+C:\Users\b8hx58\source\repos\DevJJGR\src\Gatherly.Presentation\obj\Debug\net6.0\ref\Gatherly.Presentation.dll
