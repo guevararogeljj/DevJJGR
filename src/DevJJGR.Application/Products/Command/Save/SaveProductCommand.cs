@@ -6,6 +6,7 @@ namespace DevJJGR.Application.Products.Command.Save
 {
     public class SaveProductCommand : IRequest<ResponseDto<Guid>>
     {
-        public ProductsDTO Products { get; set; }
+        public string ProductName { get; set; }
+        public Guid CategoryId { get; set; }
     }
 }

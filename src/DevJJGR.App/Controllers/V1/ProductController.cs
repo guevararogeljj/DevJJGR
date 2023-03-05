@@ -33,7 +33,7 @@ namespace DevJJGR.Presentation.Controllers.V1
             return StatusCode((int)response.Code, response);
         }
 
-        [HttpPut]
+        [HttpPost]
         [Route("SaveProduct")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
@@ -44,7 +44,7 @@ namespace DevJJGR.Presentation.Controllers.V1
             return StatusCode((int)result.Code, result);
         }
 
-        [HttpPost]
+        [HttpPut]
         [Route("Update")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
@@ -56,12 +56,13 @@ namespace DevJJGR.Presentation.Controllers.V1
         }
 
         [HttpDelete]
+        [Route("Delete/{Id:guid}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult> Delete(DeleteProductCommand request)
+        public async Task<ActionResult> Delete(Guid Id)
         {
-            var response = await this.Mediator.Send(request);
+            var response = await this.Mediator.Send(new DeleteProductCommand { Id = Id });
             return StatusCode((int)response.Code, response);
         }
     }

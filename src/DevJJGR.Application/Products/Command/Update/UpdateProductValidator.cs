@@ -6,8 +6,8 @@ namespace DevJJGR.Application.Products.Command.Update
     {
         public UpdateProductValidator()
         {
-            RuleFor(x => x.Products.ProductName).NotEmpty();
-            RuleFor(x => x.Products.Categories.CategoryId).NotEmpty();
+            RuleFor(x => x.ProductId).NotEmpty();
+            RuleFor(x => x.ProductName).NotEmpty();
         }
     }
 }

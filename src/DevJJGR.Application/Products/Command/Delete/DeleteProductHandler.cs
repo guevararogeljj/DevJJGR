@@ -12,11 +12,13 @@ namespace DevJJGR.Application.Products.Command.Delete
         private readonly ILogger<DeleteProductHandler> _logger;
         private readonly IProductsRepository _productsRepository;
         private readonly IMapper _mapper;
-        public DeleteProductHandler(ILogger<DeleteProductHandler> logger, IProductsRepository productsRepository, IMapper mapper)
+        private readonly IRabbitMQService rabbitMQService;
+        public DeleteProductHandler(ILogger<DeleteProductHandler> logger, IProductsRepository productsRepository, IMapper mapper, IRabbitMQService rabbitMQService)
         {
             this._logger = logger;
             this._productsRepository = productsRepository;
             this._mapper = mapper;
+            this.rabbitMQService = rabbitMQService;
         }
 
         public async Task<ResponseDto<ProductsDTO>> Handle(DeleteProductCommand request, CancellationToken cancellationToken)
@@ -31,6 +33,7 @@ namespace DevJJGR.Application.Products.Command.Delete
                 await this._productsRepository.SaveChangesAsync();
                 response.Data = null;
                 response.SetStatusCode(StatusCode.OK);
+                this.rabbitMQService.SendMessage($"Se elimino el producto {product.ProductId}");
                 return response;
             }
             catch (Exception ex)

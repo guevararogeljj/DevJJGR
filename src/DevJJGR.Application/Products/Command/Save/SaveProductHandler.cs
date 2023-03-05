@@ -12,13 +12,15 @@ namespace DevJJGR.Application.Products.Command.Save
         private readonly IProductsRepository _productsRepository;
         private readonly IMapper _mapper;
         private readonly ICategoriesRepository _categoriesRepository;
+        private readonly IRabbitMQService _rabbitMQService;
         public SaveProductHandler(ILogger<SaveProductHandler> logger,
-            IProductsRepository productsRepository, IMapper mapper, ICategoriesRepository categoriesRepository)
+            IProductsRepository productsRepository, IMapper mapper, ICategoriesRepository categoriesRepository, IRabbitMQService rabbitMQService)
         {
             this._logger = logger;
             this._productsRepository = productsRepository;
             this._mapper = mapper;
             this._categoriesRepository = categoriesRepository;
+            this._rabbitMQService = rabbitMQService;
         }
 
         public async Task<ResponseDto<Guid>> Handle(SaveProductCommand request, CancellationToken cancellationToken)
@@ -26,23 +28,19 @@ namespace DevJJGR.Application.Products.Command.Save
             var response = new ResponseDto<Guid>();
             try
             {
-                var categoeries = await this._categoriesRepository.FirstOrDefaultAsync(x => x.CategoryId.Equals(request.Products.Categories.CategoryId));
+                var categoeries = await this._categoriesRepository.FirstOrDefaultAsync(x => x.CategoryId.Equals(request.CategoryId));
                 if (categoeries == null)
                     return new ResponseDto<Guid>("La categoria no existe.", StatusCode.BAD_REQUEST);
 
                 var product = new DevJJGR.Domain.Entities.Products();
-                product = (await this._productsRepository.FirstOrDefaultAsync(x => x.ProductId.Equals(request.Products.ProductId)));
-                if (product != null)
-                    return new ResponseDto<Guid>("Producto ya existente.", StatusCode.BAD_REQUEST);
-                else
-                    product = new DevJJGR.Domain.Entities.Products();
 
-                product.ProductName = request.Products.ProductName;
+                product.ProductName = request.ProductName;
                 product.CategoryId = categoeries.CategoryId;
                 await this._productsRepository.AddAsync(product);
                 await this._productsRepository.SaveChangesAsync();
                 response.Data = product.ProductId;
                 response.SetStatusCode(StatusCode.CREATED);
+                this._rabbitMQService.SendMessage($"Se guardó exitosamente el producto {product.ProductName}");
                 return response;
             }
             catch (Exception ex)

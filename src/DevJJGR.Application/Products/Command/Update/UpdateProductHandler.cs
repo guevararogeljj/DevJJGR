@@ -14,12 +14,14 @@ namespace DevJJGR.Application.Products.Command.Update
         private readonly IProductsRepository _productsRepository;
         private readonly IMapper _mapper;
         private readonly ICategoriesRepository _categoriesRepository;
-        public UpdateProductHandler(ILogger<SaveProductHandler> logger, IProductsRepository productsRepository, IMapper mapper, ICategoriesRepository categoriesRepository)
+        private readonly IRabbitMQService _rabbitMQService;
+        public UpdateProductHandler(ILogger<SaveProductHandler> logger, IProductsRepository productsRepository, IMapper mapper, ICategoriesRepository categoriesRepository, IRabbitMQService rabbitMQService)
         {
             this._logger = logger;
             this._productsRepository = productsRepository;
             this._mapper = mapper;
             this._categoriesRepository = categoriesRepository;
+            this._rabbitMQService = rabbitMQService;
         }
 
         public async Task<ResponseDto<ProductsDTO>> Handle(UpdateProductCommand request, CancellationToken cancellationToken)
@@ -27,20 +29,17 @@ namespace DevJJGR.Application.Products.Command.Update
             var response = new ResponseDto<ProductsDTO>();
             try
             {
-                var categoeries = await this._categoriesRepository.FirstOrDefaultAsync(x => x.CategoryId.Equals(request.Products.Categories.CategoryId));
-                if (categoeries == null)
-                    return new ResponseDto<ProductsDTO>("La categoria no existe.", StatusCode.BAD_REQUEST);
-
                 var product = new DevJJGR.Domain.Entities.Products();
-                product = (await this._productsRepository.FirstOrDefaultAsync(x => x.ProductId.Equals(request.Products.ProductId)));
+                product = (await this._productsRepository.FirstOrDefaultAsync(x => x.ProductId.Equals(request.ProductId)));
                 if (product is null)
                     return new ResponseDto<ProductsDTO>("Producto no existente.", StatusCode.BAD_REQUEST);
 
-                product.ProductName = request.Products.ProductName;
+                product.ProductName = request.ProductName;
                 this._productsRepository.Update(product);
                 await this._productsRepository.SaveChangesAsync();
-                response.Data = request.Products;
+                response.Data = _mapper.Map<ProductsDTO>(product);
                 response.SetStatusCode(StatusCode.OK);
+                this._rabbitMQService.SendMessage($"Se modificó el producto {product.ProductId}");
                 return response;
             }
             catch (Exception ex)

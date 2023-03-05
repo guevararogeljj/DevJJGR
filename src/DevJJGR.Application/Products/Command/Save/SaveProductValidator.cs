@@ -6,8 +6,8 @@ namespace DevJJGR.Application.Products.Command.Save
     {
         public SaveProductValidator()
         {
-            RuleFor(x => x.Products.ProductName).NotEmpty();
-            RuleFor(x => x.Products.Categories.CategoryId).NotEmpty();
+            RuleFor(x => x.ProductName).NotEmpty();
+            RuleFor(x => x.CategoryId).NotEmpty();
         }
     }
 }

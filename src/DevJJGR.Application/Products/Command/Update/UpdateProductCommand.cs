@@ -6,6 +6,7 @@ namespace DevJJGR.Application.Products.Command.Update
 {
     public class UpdateProductCommand : IRequest<ResponseDto<ProductsDTO>>
     {
-        public ProductsDTO Products { get; set; }
+        public Guid ProductId { get; set; }
+        public string ProductName { get; set; }
     }
 }

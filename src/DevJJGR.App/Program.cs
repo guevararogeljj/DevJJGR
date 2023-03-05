@@ -8,16 +8,7 @@ using Serilog;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
-//builder
-//    .Services
-//    .Scan(
-//        selector => selector
-//            .FromAssemblies(
-//                DevJJGR.Infrastructure.AssemblyReference.Assembly,
-//                DevJJGR.Persistence.AssemblyReference.Assembly)
-//            .AddClasses(false)
-//            .AsImplementedInterfaces()
-//            .WithScopedLifetime());
+
 builder.Services.AddServices();
 builder.Services.AddPersistenceServices(builder.Configuration);
 builder.Services.AddMediatR(DevJJGR.Application.AssemblyReference.Assembly);
@@ -27,14 +18,25 @@ builder.Services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehavi
 builder.Services.AddValidatorsFromAssembly(DevJJGR.Application.AssemblyReference.Assembly,
     includeInternalTypes: true);
 
+
+builder.Services.AddCors(x => x.AddPolicy("Policy", x =>
+{
+    x.WithOrigins(
+      builder.Configuration.GetValue<string>("endpoints:webapp"),
+      builder.Configuration.GetValue<string>("endpoints:webapp2"),
+      builder.Configuration.GetValue<string>("endpoints:webapp3")
+     )
+     .AllowAnyHeader()
+     .AllowAnyMethod()
+     .AllowCredentials();
+}));
+
+
 string connectionString = builder.Configuration.GetConnectionString("Database");
-
-
 
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
     connectionString,
     x => x.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName).EnableRetryOnFailure()));
-//builder.Services.AddQuartzHostedService();
 
 builder
     .Services
@@ -63,7 +65,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseCors("Policy");
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
